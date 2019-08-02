@@ -4,18 +4,24 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ShowProjectsComponent } from './show-projects/show-projects.component';
-import { ShowUsersComponent } from './show-users/show-users.component';
+import { ShowEmployeesComponent } from './show-employees/show-employees.component';
 import { ProjectInfoComponent } from './project-info/project-info.component';
 import { EmployeeInfoComponent } from './employee-info/employee-info.component';
 import {HttpClientModule} from '@angular/common/http';
+import { HeadComponent } from './head/head.component';
+import { StartProjectComponent } from './start-project/start-project.component';
+import { HireEmployeeComponent } from './hire-employee/hire-employee.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShowProjectsComponent,
-    ShowUsersComponent,
+    ShowEmployeesComponent,
     ProjectInfoComponent,
-    EmployeeInfoComponent
+    EmployeeInfoComponent,
+    HeadComponent,
+    StartProjectComponent,
+    HireEmployeeComponent
   ],
   imports: [
     BrowserModule,

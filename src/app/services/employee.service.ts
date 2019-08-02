@@ -31,5 +31,8 @@ export class EmployeeService {
     return this.http.delete(this.URL + id);
   }
 
-
+  addProjectToEmployee(employeeId: number, projectId: number) {
+    const finalUrl = this.URL + 'project/' + employeeId + '/' + projectId;
+    return this.http.get(finalUrl);
+  }
 }

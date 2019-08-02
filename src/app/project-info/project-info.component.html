@@ -1,3 +1,7 @@
-<p>
-  project-info works!
-</p>
+<div>
+  <h3>{{project.projectName}}</h3>
+  <h5>{{project.description}}</h5>
+  <div *ngFor="let employee of project.employees">
+    <a [routerLink]="['/employee/', employee.id]">{{employee.firstName}} {{employee.secondName}}</a>
+  </div>
+</div>

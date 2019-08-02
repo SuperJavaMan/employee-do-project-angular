@@ -1,3 +1,16 @@
-<p>
-  show-projects works!
-</p>
+<article *ngIf="isDataUpdated && !isErrorAppear; else errorPage">
+  <div *ngFor="let project of projects">
+    <h5>{{project.projectName}}</h5>
+    <p>{{project.description.slice(0, 100)}}</p>
+    <div>
+      <p>Members: {{project.employees.length}}</p>
+    </div>
+    <button [routerLink]="['/project/', project.id]">More details...</button>
+  </div>
+</article>
+<ng-template #errorPage>
+  <div>
+    <h3>Something going wrong:(</h3>
+    <h4>Server answer with message: {{errorMessage}}</h4>
+  </div>
+</ng-template>
