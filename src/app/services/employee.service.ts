@@ -32,7 +32,7 @@ export class EmployeeService {
   }
 
   addProjectToEmployee(employeeId: number, projectId: number) {
-    const finalUrl = this.URL + 'project/' + employeeId + '/' + projectId;
+    const finalUrl = this.URL + 'employee/' + employeeId + '/' + projectId;
     return this.http.get(finalUrl);
   }
 }

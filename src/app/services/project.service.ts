@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Employee} from '../models/employee';
+import {Project} from '../models/project';
 
 @Injectable({
   providedIn: 'root'
@@ -16,15 +17,16 @@ export class ProjectService {
   }
 
   getProjectById(id: number) {
+    console.log(this.URL + id);
     return this.http.get(this.URL + id);
   }
 
-  addProject(employee: Employee) {
-    return this.http.post(this.URL, employee);
+  addProject(project: Project) {
+    return this.http.post(this.URL, project);
   }
 
-  updateProject(id: number, employee: Employee) {
-    return this.http.put(this.URL + id, employee);
+  updateProject(id: number, project: Project) {
+    return this.http.put(this.URL + id, project);
   }
 
   deleteProject(id: number) {

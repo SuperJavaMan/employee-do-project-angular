@@ -1,3 +1,17 @@
-<p>
-  show-users works!
-</p>
+<article *ngIf="isDataUpdated && !isErrorAppear; else errorPage">
+  <div *ngFor="let employee of employees">
+    <h5>{{employee.firstName}} {{employee.secondName}}</h5>
+    <p>Position: {{employee.position}}</p>
+    <h5>Projects:</h5>
+    <div *ngFor="let project of employee.projects">
+      <p>{{project.projectName}}</p>
+    </div>
+    <button [routerLink]="['/employee/', employee.id]">More details...</button>
+  </div>
+</article>
+<ng-template #errorPage>
+  <div>
+    <h3>Something going wrong:(</h3>
+    <h4>Server answer with message: {{errorMessage}}</h4>
+  </div>
+</ng-template>

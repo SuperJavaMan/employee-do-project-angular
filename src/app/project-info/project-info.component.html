@@ -1,7 +1,17 @@
-<div>
+<div *ngIf="isDataUpdated && !isErrorAppear; else errorPage">
   <h3>{{project.projectName}}</h3>
   <h5>{{project.description}}</h5>
+  <h6>Members:</h6>
   <div *ngFor="let employee of project.employees">
     <a [routerLink]="['/employee/', employee.id]">{{employee.firstName}} {{employee.secondName}}</a>
   </div>
+  <button routerLink="/start-project">+ Start new</button>
+  <button [routerLink]="['/update-project', projectId]">Update</button>
+  <button (click)="delete(projectId)">Delete</button>
 </div>
+<ng-template #errorPage>
+  <div>
+    <h3>Something going wrong:(</h3>
+    <h4>Server answer with message: {{errorMessage}}</h4>
+  </div>
+</ng-template>

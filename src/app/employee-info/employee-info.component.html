@@ -1,3 +1,19 @@
-<p>
-  employee-info works!
-</p>
+<div *ngIf="isDataUpdated && !isErrorAppear; else errorPage">
+  <h3>{{employee.firstName}} {{employee.secondName}}</h3>
+  <h5>{{employee.position}}</h5>
+  <h5>{{employee.email}}</h5>
+  <h5>{{employee.phone}}</h5>
+  <h6>Projects:</h6>
+  <div *ngFor="let project of employee.projects">
+    <a [routerLink]="['/project/', project.id]">{{project.projectName}}</a>
+  </div>
+  <button routerLink="/hire-employee">+ Hire employee</button>
+  <button [routerLink]="['/update-employee', employeeId]">Update</button>
+  <button (click)="delete(employeeId)">Delete</button>
+</div>
+<ng-template #errorPage>
+  <div>
+    <h3>Something going wrong:(</h3>
+    <h4>Server answer with message: {{errorMessage}}</h4>
+  </div>
+</ng-template>

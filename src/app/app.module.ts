@@ -11,6 +11,9 @@ import {HttpClientModule} from '@angular/common/http';
 import { HeadComponent } from './head/head.component';
 import { StartProjectComponent } from './start-project/start-project.component';
 import { HireEmployeeComponent } from './hire-employee/hire-employee.component';
+import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
+import { UpdateProjectComponent } from './update-project/update-project.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,11 +24,14 @@ import { HireEmployeeComponent } from './hire-employee/hire-employee.component';
     EmployeeInfoComponent,
     HeadComponent,
     StartProjectComponent,
-    HireEmployeeComponent
+    HireEmployeeComponent,
+    UpdateEmployeeComponent,
+    UpdateProjectComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [],
