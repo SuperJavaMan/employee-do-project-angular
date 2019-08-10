@@ -2,6 +2,7 @@ import {Project} from './project';
 
 export class Employee {
 
+  id: number;
   constructor(id: number,
               firstName: string,
               secondName: string,
